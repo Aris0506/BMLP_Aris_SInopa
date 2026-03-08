@@ -29,4 +29,4 @@ Berdasarkan hasil *Inverse Transform*, ditemukan 2 persona nasabah yang sangat k
 ## 🏆 Acknowledgement
 Proyek ini merupakan submission akhir untuk kelulusan kelas **"Membangun Model Machine Learning"** yang diselenggarakan oleh **Dicoding Indonesia** bekerja sama dengan **DBS Foundation**.
 * **Status Kelulusan:** Lulus dengan predikat Sangat Memuaskan (Skilled/Advanced)
-* **Sertifikat:** [Opsional: Masukkan link sertifikat kamu di sini]
+* **Sertifikat:** https://www.dicoding.com/certificates/4EXG19LNDPRL
