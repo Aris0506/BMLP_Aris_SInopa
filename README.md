@@ -24,3 +24,9 @@ Berdasarkan hasil *Inverse Transform*, ditemukan 2 persona nasabah yang sangat k
 1. Clone repository ini.
 2. Buka file `[Clustering]_Submission_Akhir.ipynb` untuk melihat proses segmentasi.
 3. Buka file `[Klasifikasi]_Submission_Akhir.ipynb` untuk melihat proses pemodelan prediktif.
+
+
+## 🏆 Acknowledgement
+Proyek ini merupakan submission akhir untuk kelulusan kelas **"Membangun Model Machine Learning"** yang diselenggarakan oleh **Dicoding Indonesia** bekerja sama dengan **DBS Foundation**.
+* **Status Kelulusan:** Lulus dengan predikat Sangat Memuaskan (Skilled/Advanced)
+* **Sertifikat:** [Opsional: Masukkan link sertifikat kamu di sini]
