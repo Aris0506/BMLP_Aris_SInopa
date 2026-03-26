@@ -30,3 +30,11 @@ Berdasarkan hasil *Inverse Transform*, ditemukan 2 persona nasabah yang sangat k
 Proyek ini merupakan submission akhir untuk kelulusan kelas **"Membangun Model Machine Learning"** yang diselenggarakan oleh **Dicoding Indonesia** bekerja sama dengan **DBS Foundation**.
 * **Status Kelulusan:** Lulus
 * **Sertifikat:** https://www.dicoding.com/certificates/4EXG19LNDPRL
+
+
+## ⚠️ Keterbatasan Model & Area Pengembangan (Future Works)
+Selama proses *stress-testing* pada model **Random Forest** yang telah di-*deploy*, ditemukan beberapa karakteristik dan batasan dari model ini:
+
+1. **Kuat pada Anomali Transaksional:** Model sangat sensitif dan akurat dalam mendeteksi *fraud* yang bersifat transaksional matematis. Misalnya, model berhasil mendeteksi anomali ketika seorang pelanggan dengan profesi Mahasiswa (Student) melakukan transfer dana yang jumlahnya jauh melebihi sisa saldo di rekeningnya.
+2. **Keterbatasan pada Anomali Keamanan Siber (Cybersecurity):** Model saat ini memiliki *blind spot* terhadap skenario pengambilalihan akun (*Account Takeover*). Sebagai contoh, model gagal mendeteksi aktivitas mencurigakan berupa percobaan *login* yang gagal berkali-kali (indikasi *brute-force*). 
+3. **Penyebab & Solusi:** Hal ini wajar terjadi karena *imbalanced data* dan kurangnya variasi kasus *cyber-fraud* ekstrem pada dataset BMLP yang digunakan saat *training*. Sebagai pengembangan ke depan, model perlu dilatih ulang (retrain) menggunakan teknik *Synthetic Minority Over-sampling Technique* (SMOTE) atau menyuntikkan data sintetik yang memuat skenario serangan *brute-force*.
