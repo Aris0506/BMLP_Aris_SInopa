@@ -33,8 +33,11 @@ Proyek ini merupakan submission akhir untuk kelulusan kelas **"Membangun Model M
 
 
 ## ⚠️ Keterbatasan Model & Area Pengembangan (Future Works)
-Selama proses *stress-testing* pada model **Random Forest** yang telah di-*deploy*, ditemukan beberapa karakteristik dan batasan dari model ini:
 
-1. **Kuat pada Anomali Transaksional:** Model sangat sensitif dan akurat dalam mendeteksi *fraud* yang bersifat transaksional matematis. Misalnya, model berhasil mendeteksi anomali ketika seorang pelanggan dengan profesi Mahasiswa (Student) melakukan transfer dana yang jumlahnya jauh melebihi sisa saldo di rekeningnya.
-2. **Keterbatasan pada Anomali Keamanan Siber (Cybersecurity):** Model saat ini memiliki *blind spot* terhadap skenario pengambilalihan akun (*Account Takeover*). Sebagai contoh, model gagal mendeteksi aktivitas mencurigakan berupa percobaan *login* yang gagal berkali-kali (indikasi *brute-force*). 
-3. **Penyebab & Solusi:** Hal ini wajar terjadi karena *imbalanced data* dan kurangnya variasi kasus *cyber-fraud* ekstrem pada dataset BMLP yang digunakan saat *training*. Sebagai pengembangan ke depan, model perlu dilatih ulang (retrain) menggunakan teknik *Synthetic Minority Over-sampling Technique* (SMOTE) atau menyuntikkan data sintetik yang memuat skenario serangan *brute-force*.
+Selama proses *stress-testing* pada aplikasi yang telah di-*deploy*, ditemukan beberapa karakteristik teknis dan batasan dari model **Random Forest** ini:
+
+1. **Kuat pada Anomali Transaksional Terikat:** Model sangat sensitif dan akurat dalam mendeteksi *fraud* berdasarkan kombinasi rumit antara rasio demografi dan transaksi, **selama nilainya berada dalam rentang data latih**. (Contoh: Berhasil mendeteksi anomali transaksi *online* oleh pelanggan berstatus Mahasiswa dengan nominal yang spesifik).
+2. **Kelemahan Ekstrapolasi (Nilai Ekstrem):** Mengingat sifat bawaan algoritma berbasis *Tree* yang tidak bisa melakukan ekstrapolasi, model ini kesulitan memprediksi angka yang jauh di luar distribusi (outliers). Uji coba dengan nilai ekstrem (misal: nominal transaksi $15.000) gagal dideteksi sebagai *fraud*. Hal ini terjadi karena pada dataset historis, kelas *fraud* justru didominasi oleh pola transaksi dengan nominal kecil dan spesifik, sehingga nilai ekstrem akan diklasifikasikan kembali ke mayoritas kelas (Aman/Normal).
+3. **Keterbatasan pada Anomali Keamanan Siber:** Model memiliki *blind spot* terhadap skenario pengambilalihan akun (*Account Takeover*). Model gagal mendeteksi aktivitas mencurigakan berupa percobaan *login* yang gagal belasan kali (indikasi *brute-force*) karena kurangnya variasi kasus tersebut pada data *training*.
+4. **Solusi & Rencana Pengembangan:** * Melakukan *retraining* model dengan menyuntikkan data sintetik (menggunakan teknik SMOTE) yang memuat skenario serangan siber ekstrem.
+   * Menggabungkan model klasifikasi ini dengan algoritma pendeteksi *outlier* murni (seperti *Isolation Forest*) di awal *pipeline* untuk menangkap anomali angka ekstrem sebelum diklasifikasikan oleh Random Forest.
