@@ -41,3 +41,5 @@ Selama proses *stress-testing* pada aplikasi yang telah di-*deploy*, ditemukan b
 3. **Keterbatasan pada Anomali Keamanan Siber:** Model memiliki *blind spot* terhadap skenario pengambilalihan akun (*Account Takeover*). Model gagal mendeteksi aktivitas mencurigakan berupa percobaan *login* yang gagal belasan kali (indikasi *brute-force*) karena kurangnya variasi kasus tersebut pada data *training*.
 4. **Solusi & Rencana Pengembangan:** * Melakukan *retraining* model dengan menyuntikkan data sintetik (menggunakan teknik SMOTE) yang memuat skenario serangan siber ekstrem.
    * Menggabungkan model klasifikasi ini dengan algoritma pendeteksi *outlier* murni (seperti *Isolation Forest*) di awal *pipeline* untuk menangkap anomali angka ekstrem sebelum diklasifikasikan oleh Random Forest.
+
+## Dashboard Analitik
