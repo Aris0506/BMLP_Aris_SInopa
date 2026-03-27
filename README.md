@@ -43,3 +43,9 @@ Selama proses *stress-testing* pada aplikasi yang telah di-*deploy*, ditemukan b
    * Menggabungkan model klasifikasi ini dengan algoritma pendeteksi *outlier* murni (seperti *Isolation Forest*) di awal *pipeline* untuk menangkap anomali angka ekstrem sebelum diklasifikasikan oleh Random Forest.
 
 ## Dashboard Analitik
+![video](https://github.com/user-attachments/assets/d10d6b44-595a-4ff6-bc08-10b41e4cec83)
+
+
+
+
+
